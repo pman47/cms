@@ -61,6 +61,7 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Category Title</th>
+                                        <th colspan="2">COMMANDS</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -75,8 +76,8 @@
                                             echo "<tr>";
                                             echo "<td>{$cat_id}</td>";
                                             echo "<td>{$cat_title}</td>";
-                                            echo "<td><a href='categories.php?delete={$cat_id}'>DELETE</a></td>";
-                                            echo "<td><a href='categories.php?edit={$cat_id}'>EDIT</a></td>";
+                                            echo "<td><a href='category.php?delete={$cat_id}'>DELETE</a></td>";
+                                            echo "<td><a href='category.php?edit={$cat_id}'>EDIT</a></td>";
                                             echo "</tr>";
                                         }
                                     ?>
@@ -88,7 +89,7 @@
 
                                             $query = "DELETE FROM categories WHERE cat_id = {$the_cat_id}";
                                             $delete_query = mysqli_query($connection,$query);
-                                            header("Location: categories.php");
+                                            header("Location: category.php");
                                         }
                                     ?>
                                 </tbody>

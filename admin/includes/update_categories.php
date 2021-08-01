@@ -31,7 +31,7 @@
                                         if(!$update_query){
                                             echo die("Update Query Failed" . mysqli_error($connection));
                                         }
-                                        header("Location: categories.php");
+                                        header("Location: category.php");
                                     }
                                 ?>
 
