@@ -22,6 +22,10 @@
 
         confirm($create_post_query);
 
+        $the_post_id = mysqli_insert_id($connection);
+
+        echo "<div class='alert alert-success' role='alert'>Post Created : <a href='../post.php?p_id={$the_post_id}' class='alert-link'>Check Out</a> | <a href='posts.php' class='alert-link'>Edit More Post.</div>";
+
     }
 ?>
 
@@ -61,8 +65,12 @@
     </div>
 
     <div class="form-group">
-        <label for="post_status">Post Status</label>
-        <input type="text" name="post_status" class="form-control">
+        <label for="post_status">Post Status</label><br>
+        <select name="post_status" id="">
+            <option value="draft">Select Options</option>
+            <option value="published">Published</option>
+            <option value="draft">Draft</option>
+        </select>
     </div>
     
     <div class="form-group">
@@ -77,7 +85,7 @@
 
     <div class="form-group">
         <label for="post_content">Post Content</label>
-        <textarea class="form-control" name="post_content" id="" cols="30" rows="10"></textarea>
+        <textarea class="form-control" name="post_content" id="body" cols="30" rows="10"></textarea>
     </div>
 
     <div class="form-group">

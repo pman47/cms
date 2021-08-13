@@ -25,6 +25,8 @@
 
         confirm($create_user_query);
 
+        echo "<div class='alert alert-success' role='alert'>User Created : <a href='users.php' class='alert-link'>Check Out</a>.</div>";
+
     }
 ?>
 

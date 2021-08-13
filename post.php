@@ -89,15 +89,30 @@
                     <form action="" method="post" role="form">
                         <label for="Author">Author</label>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="comment_author">
+                            <?php
+                                if(isset($_SESSION['username'])){
+                                    $firstName = $_SESSION['firstname'];
+                                    $lastName = $_SESSION['lastname'];
+                                    echo "<input type='text' value='$firstName $lastName' class='form-control' name='comment_author' required>";
+                                }else{
+                                    echo "<input type='text' class='form-control' name='comment_author' required>";
+                                }
+                            ?>
                         </div>
                         <label for="Email">Email</label>
                         <div class="form-group">
-                            <input type="email" name="comment_email" class="form-control">
+                            <?php
+                                if(isset($_SESSION['username'])){
+                                    $email = $_SESSION['email'];
+                                    echo "<input type='email' value='$email' name='comment_email' class='form-control' required>";
+                                }else{
+                                    echo "<input type='email' name='comment_email' class='form-control' required>";
+                                }
+                            ?>
                         </div>
                         <label for="comment">Your Comment</label>
                         <div class="form-group">
-                            <textarea class="form-control" name="comment_content" rows="3"></textarea>
+                            <textarea class="form-control" name="comment_content" rows="3" required></textarea>
                         </div>
                         <button type="submit" name="create_comment" class="btn btn-primary">Submit</button>
                     </form>

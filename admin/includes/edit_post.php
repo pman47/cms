@@ -57,6 +57,8 @@
 
         confirm($update_post);
 
+        echo "<div class='alert alert-success' role='alert'>Post Updated : <a href='../post.php?p_id={$the_post_id}' class='alert-link'>Check Out</a> | <a href='posts.php' class='alert-link'>Edit More Post.</div>";
+
     }
 
 ?>
@@ -95,8 +97,17 @@
     </div>
 
     <div class="form-group">
-        <label for="post_status">Post Status</label>
-        <input value="<?php echo $post_status; ?>" type="text" name="post_status" class="form-control">
+    <label for="title">Post Status</label><br/>
+        <select name="post_status" id="">
+            <option value='<?php echo $post_status;?>'><?php echo $post_status;?></option>
+            <?php
+                if($post_status == 'draft'){
+                    echo "<option value='published'>published</option>";
+                }else{
+                    echo "<option value='draft'>draft</option>";
+                }
+            ?>
+        </select>
     </div>
     
     <div class="form-group">
@@ -113,7 +124,7 @@
 
     <div class="form-group">
         <label for="post_content">Post Content</label>
-        <textarea class="form-control" name="post_content" id="" cols="30" rows="10"><?php echo $post_content; ?></textarea>
+        <textarea class="form-control" name="post_content" id="body" cols="30" rows="10"><?php echo $post_content; ?></textarea>
     </div>
 
     <div class="form-group">
