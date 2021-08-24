@@ -31,6 +31,10 @@
                     <a href="admin">Admin</a>
                 </li>
 
+                <li>
+                    <a href="registration.php">Registration</a>
+                </li>
+
                 <?php
                     if(isset($_SESSION['user_role'])){
                         $the_user_role = $_SESSION['user_role'];

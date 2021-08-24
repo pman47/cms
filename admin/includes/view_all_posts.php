@@ -119,7 +119,7 @@
                     echo "<td>";
                     echo "<a href='posts.php?source=edit_post&p_id={$post_id}'><i class='fa fa-edit'></i> EDIT</a>";
                     echo "<br>";
-                    echo "<a href='posts.php?delete={$post_id}'><i class='fa fa-trash-o'></i> DELETE</a>";
+                    echo "<a onClick=\"javascript: return confirm('Are you sure you want to delete?'); \" href='posts.php?delete={$post_id}'><i class='fa fa-trash-o'></i> DELETE</a>";
                     echo "</td>";
                     echo "<td><a href='../post.php?p_id={$post_id}'><i class='fa fa-eye'></i> VISIT</a></td>";
                     echo "</tr>";
